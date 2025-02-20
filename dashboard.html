@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Eco-Friendly Dashboard!</h1>
+    </header>
+    
+    <div class="main-container">
+        <!-- Plate Ordering Section -->
+        <section class="plate-ordering">
+            <h2>Order Plates</h2>
+            <form method="POST">
+                <label for="plates">Enter the number of plates you want to buy:</label>
+                <input type="number" id="plates" name="plates" required>
+                
+                <label for="shape">Choose the shape (circle/square):</label>
+                <input type="text" id="shape" name="shape" required>
+                
+                <button type="submit">Order Plates</button>
+            </form>
+
+            {% if amount is not none %}
+                <p>Total amount you need to pay is: ${{ amount }}</p>
+            {% endif %}
+
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </section>
+        
+        <!-- Page Info Section -->
+        <section class="page-info">
+            <h2>Page Information</h2>
+            <p>This website showcases environmentally friendly products made from sustainable materials. Each product is designed to minimize environmental impact while delivering exceptional quality.</p>
+        </section>
+    </div>
+
+    <!-- Logout Button -->
+    <footer>
+        <a href="/logout">Logout</a>
+    </footer>
+</body>
+</html>
